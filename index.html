@@ -446,7 +446,77 @@
         </div>
       </div>
 
-      <!-- ফিল্টার সেকশন -->
+    
+      <!-- চার্ট এবং টেবিল সেকশন -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <!-- চার্ট সেকশন -->
+        <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 fade-in">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-lg font-bold text-gray-800 dark:text-white flex items-center">
+              <i class="fas fa-chart-bar text-blue-500 mr-2"></i>
+              ফলাফল বিশ্লেষণ
+            </h2>
+            <button
+              id="exportChartBtn"
+              class="px-3 py-1.5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm"
+            >
+              <i class="fas fa-download mr-1"></i>
+              চার্ট এক্সপোর্ট
+            </button>
+          </div>
+
+          <div class="chart-container">
+            <canvas id="resultsChart"></canvas>
+          </div>
+        </div>
+
+        <!-- ক্যাটাগরি টেবিল -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 fade-in">
+          <h2 class="text-lg font-bold text-gray-800 dark:text-white mb-3 flex items-center">
+            <i class="fas fa-table text-blue-500 mr-2"></i>
+            ক্যাটাগরি সারাংশ (রিটেন মার্ক্স অনুযায়ী)
+          </h2>
+
+          <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <thead class="bg-gray-50 dark:bg-gray-700">
+                <tr>
+                  <th
+                    class="px-3 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+                  >
+                    ক্যাটাগরি
+                  </th>
+                  <th
+                    class="px-3 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+                  >
+                    সংখ্যা
+                  </th>
+                  <th
+                    class="px-3 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+                  >
+                    শতকরা
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                id="categoryTableBody"
+                class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700"
+              >
+                <!-- ডেটা জাভাস্ক্রিপ্ট দিয়ে যোগ হবে -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-5">
+            <h3 class="text-md font-semibold text-gray-800 dark:text-white mb-2">গ্রেড বিতরণ (মোট নম্বর অনুযায়ী)</h3>
+            <div class="space-y-2" id="gradeDistribution">
+              <!-- গ্রেড ডিস্ট্রিবিউশন বার যোগ হবে -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <!-- ফিল্টার সেকশন -->
       <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 mb-6 fade-in">
         <h2 class="text-lg font-bold text-gray-800 dark:text-white mb-3 flex items-center">
           <i class="fas fa-filter text-blue-500 mr-2"></i>
@@ -541,74 +611,6 @@
         </div>
       </div>
 
-      <!-- চার্ট এবং টেবিল সেকশন -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-        <!-- চার্ট সেকশন -->
-        <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 fade-in">
-          <div class="flex justify-between items-center mb-4">
-            <h2 class="text-lg font-bold text-gray-800 dark:text-white flex items-center">
-              <i class="fas fa-chart-bar text-blue-500 mr-2"></i>
-              ফলাফল বিশ্লেষণ
-            </h2>
-            <button
-              id="exportChartBtn"
-              class="px-3 py-1.5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm"
-            >
-              <i class="fas fa-download mr-1"></i>
-              চার্ট এক্সপোর্ট
-            </button>
-          </div>
-
-          <div class="chart-container">
-            <canvas id="resultsChart"></canvas>
-          </div>
-        </div>
-
-        <!-- ক্যাটাগরি টেবিল -->
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 fade-in">
-          <h2 class="text-lg font-bold text-gray-800 dark:text-white mb-3 flex items-center">
-            <i class="fas fa-table text-blue-500 mr-2"></i>
-            ক্যাটাগরি সারাংশ (রিটেন মার্ক্স অনুযায়ী)
-          </h2>
-
-          <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-              <thead class="bg-gray-50 dark:bg-gray-700">
-                <tr>
-                  <th
-                    class="px-3 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
-                  >
-                    ক্যাটাগরি
-                  </th>
-                  <th
-                    class="px-3 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
-                  >
-                    সংখ্যা
-                  </th>
-                  <th
-                    class="px-3 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
-                  >
-                    শতকরা
-                  </th>
-                </tr>
-              </thead>
-              <tbody
-                id="categoryTableBody"
-                class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700"
-              >
-                <!-- ডেটা জাভাস্ক্রিপ্ট দিয়ে যোগ হবে -->
-              </tbody>
-            </table>
-          </div>
-
-          <div class="mt-5">
-            <h3 class="text-md font-semibold text-gray-800 dark:text-white mb-2">গ্রেড বিতরণ (মোট নম্বর অনুযায়ী)</h3>
-            <div class="space-y-2" id="gradeDistribution">
-              <!-- গ্রেড ডিস্ট্রিবিউশন বার যোগ হবে -->
-            </div>
-          </div>
-        </div>
-      </div>
 
       <!-- ট্যাব সেকশন -->
       <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden fade-in">
